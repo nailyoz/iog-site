@@ -1,22 +1,48 @@
+---
+import Header from "../layouts/Header.astro";
+import Footer from "../layouts/Footer.astro";
+import "../styles/global.css";
+const { page } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>IOG - {page}</title>
+  </head>
+  <body>
+    <div id="container">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #container {
+    height: 100%;
+  }
+  body {
+    /* Background padrão (claro) */
+    background: url("/assets/background-light.svg") no-repeat center center
+      fixed;
+    background-size: cover;
+    transition: background 0.3s;
+  }
+  html.dark body {
+    /* Background escuro */
+    background: url("/assets/background-dark.svg") no-repeat center center fixed;
+    background-size: cover;
+  }
 </style>

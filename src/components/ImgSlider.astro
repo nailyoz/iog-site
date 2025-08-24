@@ -1,0 +1,188 @@
+---
+const { images = [] } = Astro.props;
+---
+
+<div class="container" id="imgSlider" data-images={JSON.stringify(images)}>
+  <button id="prevBtn">⬅</button>
+  <div class="image-container">
+    <img
+      src={images[0] ?? ""}
+      alt="Main image"
+      class="main-image"
+      id="mainImage"
+    />
+    <img
+      src={images[1] ?? images[0] ?? ""}
+      alt="Background image"
+      class="background-image"
+      id="bgImage"
+    />
+  </div>
+  <button id="nextBtn">➡</button>
+</div>
+<div id="fullscreenOverlay" class="fullscreen-overlay" style="display:none;">
+  <span id="closeOverlay" class="close-btn">&times;</span>
+  <button id="fsPrevBtn" class="fs-btn">⬅</button>
+  <img id="fsImage" class="fullscreen-image" src="" alt="Fullscreen image" />
+  <button id="fsNextBtn" class="fs-btn">➡</button>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .image-container {
+    position: relative;
+    width: fit-content;
+    margin: 2rem auto;
+    width: 20rem;
+    height: 20rem;
+  }
+  .main-image,
+  .background-image {
+    width: 300px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition:
+      transform 0.4s ease,
+      opacity 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  .background-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+    opacity: 0.9;
+  }
+  .main-image:hover {
+    transform: translateY(-10px);
+  }
+  .background-image:hover {
+    transform: translateY(-5px);
+  }
+  .controls {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .controls button {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .fullscreen-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: row;
+    height: 80%;
+    padding: 1rem;
+  }
+  .fullscreen-image {
+    height: 100%;
+    margin: 0 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    z-index: 10001;
+  }
+  .fs-btn {
+    cursor: pointer;
+    z-index: 10001;
+    user-select: none;
+  }
+</style>
+<script type="module" is:inline>
+  window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("imgSlider");
+    const images = JSON.parse(container.dataset.images || "[]");
+    let index = 0;
+
+    const mainImage = document.getElementById("mainImage");
+    const bgImage = document.getElementById("bgImage");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImages() {
+      mainImage.src = images[index];
+      mainImage.alt = `Image ${index + 1}`;
+      bgImage.src = images[(index + 1) % images.length] ?? images[0] ?? "";
+      bgImage.alt = `Background image ${((index + 1) % images.length) + 1}`;
+    }
+
+    prevBtn?.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateImages();
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateImages();
+    });
+
+    updateImages();
+
+    //modal
+    const overlay = document.getElementById("fullscreenOverlay");
+    const fsImage = document.getElementById("fsImage");
+    const closeOverlay = document.getElementById("closeOverlay");
+    const fsPrevBtn = document.getElementById("fsPrevBtn");
+    const fsNextBtn = document.getElementById("fsNextBtn");
+
+    function openFullscreen(idx) {
+      fsImage.src = images[idx];
+      fsImage.alt = `Fullscreen image ${idx + 1}`;
+      overlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function closeFullscreen() {
+      overlay.style.display = "none";
+      document.body.style.overflow = "";
+    }
+    function updateFsImage(idx) {
+      fsImage.src = images[idx];
+      fsImage.alt = `Fullscreen image ${idx + 1}`;
+    }
+
+    mainImage.addEventListener("click", () => {
+      openFullscreen(index);
+    });
+
+    closeOverlay.addEventListener("click", closeFullscreen);
+
+    fsPrevBtn.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateFsImage(index);
+    });
+
+    fsNextBtn.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateFsImage(index);
+    });
+
+    // Optional: close overlay on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (overlay.style.display === "flex") {
+        if (e.key === "Escape") closeFullscreen();
+        if (e.key === "ArrowLeft") fsPrevBtn.click();
+        if (e.key === "ArrowRight") fsNextBtn.click();
+      }
+    });
+  });
+</script>

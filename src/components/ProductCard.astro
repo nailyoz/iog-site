@@ -1,0 +1,36 @@
+---
+export interface Props {
+  href: string;
+  icon: string;
+  title: string;
+  description: string;
+  buttonText?: string;
+}
+
+const { href, icon, title, description, buttonText = "Ver Mais" } = Astro.props;
+---
+
+<a href={href} class="product-item card">
+  <div class="product-img content-center" set:html={icon} />
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <button>{buttonText}</button>
+
+  <style>
+    .product-item {
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .product-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px var(--accent);
+    }
+
+    .product-img {
+      height: 8rem;
+      width: 8rem;
+    }
+  </style>
+</a>

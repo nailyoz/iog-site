@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Medidores from "../../../public/assets/images/medidores.png";
+import MedidoresInfo from "../../../public/assets/images/medidor-info.png";
+import ImgSlider from "../../components/ImgSlider.astro";
+import ContactUs from "../../components/ContactUs.astro";
+const images = [Medidores.src, MedidoresInfo.src];
+---
+
+<Layout page="Open MDX">
+  <section class="mdx layout">
+    <div class="card">
+      <h2>Open MDX</h2>
+      <span class="subtitle"
+        >Monitoramento Inteligente de Energia em Tempo Real</span
+      >
+
+      <div>
+        <p>
+          Nosso sistema de monitoramento oferece dashboards completos e
+          intuitivos para visualização de dados de medidores de energia
+          inteligentes, com integração nativa aos protocolos NB-IoT e LoRaWAN.
+          Com ele, você acompanha em tempo real o consumo, tensões, correntes,
+          eventos e alarmes, tudo em uma plataforma segura e acessível de
+          qualquer lugar.
+
+          <ImgSlider images={images} client:load />
+        </p>
+      </div>
+    </div>
+    <div class="card container-grid">
+      <div class="layout">
+        <h2>Principais funcionalidades:</h2>
+        <p>
+          Visualização de dados em tempo real por meio de dashboards
+          interativos.
+        </p>
+        <p>
+          Suporte aos principais padrões de conectividade: NB-IoT e LoRaWAN.
+        </p>
+        <p>Alertas automáticos de falhas, perdas e consumo anômalo.</p>
+        <p>Histórico detalhado e exportação de relatórios.</p>
+        <p>Integração com sistemas externos via API.</p>
+      </div>
+      <img
+        src="/assets/data-illustration.svg"
+        alt="illustration"
+        class="illustration"
+      />
+    </div>
+    <div class="card container-grid">
+      <img
+        src="/assets/data-illustration2.svg"
+        alt="illustration"
+        class="illustration"
+      />
+
+      <div class="layout">
+        <h2>Por que escolher nosso sistema?</h2>
+        <p>Redução de custos operacionais com monitoramento remoto.</p>
+        <p>Gestão centralizada de milhares de medidores em um único painel.</p>
+        <p>Melhoria na eficiência energética e gestão de recursos.</p>
+        <p>Detecção precoce de falhas e anomalias.</p>
+        <p>Decisões informadas com base em dados precisos e atualizados.</p>
+        <p>Plataforma escalável e personalizável conforme suas necessidades.</p>
+      </div>
+    </div>
+    <ContactUs />
+  </section>
+</Layout>

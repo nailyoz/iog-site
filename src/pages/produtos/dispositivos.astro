@@ -1,0 +1,78 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Medidores from "../../../public/assets/images/medidores.png";
+import MedidoresInfo from "../../../public/assets/images/medidor-info.png";
+import ImgSlider from "../../components/ImgSlider.astro";
+import ContactUs from "../../components/ContactUs.astro";
+const images = [Medidores.src, MedidoresInfo.src];
+---
+
+<Layout page="Open MDX">
+  <section class="mdx layout">
+    <div class="card">
+      <h2>Dispositivos e Sensores Inteligentes de Telemetria</h2>
+      <span class="subtitle"
+        >Monitoramento Inteligente de Energia em Tempo Real</span
+      >
+
+      <div>
+        <p>
+          Nossos NICs (Network Interface Cards) são módulos de comunicação
+          inteligentes projetados para transformar medidores de energia em
+          dispositivos conectados e monitoráveis remotamente. Compactos,
+          robustos e com alta precisão, eles são a base da nossa solução de
+          monitoramento. Com suporte a tecnologias NB-IoT e LoRaWAN, garantem
+          conectividade estável mesmo em ambientes remotos ou de difícil acesso.
+        </p>
+      </div>
+    </div>
+    <div class="card container-grid">
+      <div class="layout">
+        <h2>Características dos Dispositivos:</h2>
+        <p>
+          Medição precisa de consumo, corrente, tensão, fator de potência e
+          qualidade de energia
+        </p>
+        <p>Transmissão automática de dados para a nuvem em tempo real</p>
+        <p>
+          Instalação simples e compatibilidade com diferentes modelos de
+          medidores
+        </p>
+        <p>
+          Protocolos NB-IoT e LoRaWAN para conectividade eficiente e de baixo
+          consumo
+        </p>
+        <p>Alimentação independente ou via rede elétrica, conforme o modelo</p>
+        <p>
+          Atualizações remotas (OTA) para manutenção e melhorias sem intervenção
+          local
+        </p>
+      </div>
+      <img
+        src="/assets/device-illustration2.svg"
+        alt="illustration"
+        class="illustration"
+      />
+    </div>
+    <div class="card container-grid">
+      <img
+        src="/assets/device-illustration.svg"
+        alt="illustration"
+        class="illustration"
+      />
+      <div class="layout">
+        <h2>Sensores Integrados</h2>
+        <p>
+          Sensor de corrente e tensão para monitoramento detalhado da rede
+          elétrica
+        </p>
+        <p>
+          Sensor de temperatura interna para proteção térmica do dispositivo
+        </p>
+        <p>Indicadores de sinal e status de conexão para diagnóstico rápido</p>
+        <p>Detecção de falhas, quedas e reconexões automaticamente</p>
+      </div>
+    </div>
+    <ContactUs />
+  </section>
+</Layout>

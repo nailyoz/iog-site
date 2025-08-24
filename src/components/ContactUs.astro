@@ -1,0 +1,53 @@
+---
+
+---
+
+<main>
+  <section id="contact-us" class="card">
+    <div class="container-grid">
+      <div style="text-align: start;">
+        <h2>Fale Conosco</h2>
+        <p>Estamos aqui para ajudar!</p>
+        <p>
+          Entre em contato conosco para saber mais sobre a Internet of Grids
+          (IoG) e como podemos colaborar para transformar seu negócio.
+        </p>
+      </div>
+      <form
+        action="https://formsubmit.co/contato@internetofgrids.com.br"
+        method="POST"
+      >
+        <input type="text" name="name" placeholder="Seu Nome" required />
+        <input type="email" name="email" placeholder="Seu Email" required />
+        <input type="text" name="_subject" placeholder="Assunto" required />
+        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+        <div style="justify-content: end; display: flex;">
+          <button type="submit">Contate-Nos</button>
+        </div>
+      </form>
+    </div>
+    <style>
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem 1rem;
+        margin: 8px 0;
+        background-color: transparent;
+        color: var(--text-color);
+        box-sizing: border-box;
+        border: 2px solid var(--border-color);
+        border-radius: 4px;
+      }
+      input:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+      main {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </section>
+</main>

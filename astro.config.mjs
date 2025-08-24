@@ -1,5 +1,16 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import astroIcon from "astro-icon";
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [
+    astroIcon({
+      collections: {
+        local: "./src/icons",
+        tabler: async () =>
+          await (
+            await import("@iconify-json/tabler")
+          ).default,
+      },
+    }),
+  ],
+});

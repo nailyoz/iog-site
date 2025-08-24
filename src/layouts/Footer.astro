@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer aria-label="footer" class="footer">
+  <div class="footer-inner">
+    <nav class="footer-section" >
+      <span>Páginas</span>
+      <a href="/#products">Produtos</a>
+      <a href="/#contact-us">Contato</a>
+      <a href="/sobre-nos">Sobre Nós</a>
+    </nav>
+    <div class="footer-section">
+      <span>Redes</span>
+     <a href="/#products" class="list-item"> <Icon name="tabler:brand-linkedin" color="var(--accent)" size={32} />
+LinkedIn</a>
+      <a href="/#contact-us" class="list-item"><Icon name="tabler:brand-instagram" color="var(--accent)" size={32} />Instagram</a>
+    </div>
+        <div class="footer-section">
+      <span>Endereço</span>
+     <p>Rua Monsenhor Bruno, nº 1153, Sala 1423 - Scopa Platinum Corporate,
+Fortaleza - CEP: 60115-191.</p>
+<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.352083375244!2d-38.51197708835395!3d-3.7332158962250253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c74910dadb58a7%3A0x1a1dee685bc4725e!2sScopa%20Platinum%20Corporate!5e0!3m2!1spt-BR!2sbr!4v1755871740553!5m2!1spt-BR!2sbr"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+  <style>
+    .footer {
+      z-index: 50;
+      padding: 2rem;
+      width: 100%;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(6px);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    }
+    .map {
+      height: 16rem
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+    }
+
+    @media (max-width: 768px) {
+  .footer-inner {
+      display: flex;
+        flex-direction: column;
+      gap: 2rem;
+  }
+  </style>
+
+
+</footer>

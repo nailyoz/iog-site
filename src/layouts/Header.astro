@@ -1,0 +1,271 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header role="banner" aria-label="Main navigation" class="site-header">
+  <div class="header-inner">
+    <a href="/#hero" aria-label="Go to home" class="logo-link">
+      <img src="" class="logo-icon" id="siteLogo" />
+    </a>
+
+    <nav class="nav-desktop">
+      <div class="submenu-container">
+        <a
+          href="/#products"
+          class="has-submenu"
+          aria-haspopup="true"
+          aria-expanded="false">Produtos</a
+        >
+        <div class="submenu" role="menu" aria-label="Produtos submenu">
+          <a href="/produtos/dispositivos" role="menuitem">Dispositivos</a>
+          <a href="/produtos/open-mdx" role="menuitem">OpenMDX</a>
+        </div>
+      </div>
+      <a href="/#contact-us">Contato</a>
+      <a href="/sobre-nos">Sobre Nós</a>
+    </nav>
+
+    <div class="header-controls">
+      <!-- <button id="themeToggle" aria-label="Toggle theme" class="theme-toggle">
+        <Icon name="tabler:sun" class="sun icon" />
+        <Icon name="tabler:moon" class="moon icon" />
+      </button> -->
+
+      <button
+        id="mobileMenuToggle"
+        aria-label="Toggle mobile menu"
+        class="mobile-menu-toggle"
+      >
+        <Icon name="tabler:menu" class="icon" />
+      </button>
+    </div>
+  </div>
+  <nav id="mobileMenu" class="nav-mobile">
+    <div class="mobile-submenu-container">
+      <a href="#" class="mobile-has-submenu">Produtos</a>
+      <div class="mobile-submenu">
+        <a href="/produtos/dispositivos">Dispositivos</a>
+        <a href="/produtos/open-mdx">OpenMDX</a>
+      </div>
+    </div>
+    <a href="/#contact-us">Contato</a>
+    <a href="/sobre-nos">Sobre Nós</a>
+  </nav>
+
+  <style>
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: 100%;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: blur(6px);
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-icon {
+      width: 8rem;
+      height: auto;
+      display: block;
+      transition: color 0.3s ease;
+    }
+
+    .logo-link:hover .logo-icon {
+      color: var(--accent);
+    }
+
+    .nav-desktop {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      color: var(--text-color);
+    }
+
+    .sun {
+      display: block;
+    }
+    .moon {
+      display: none;
+    }
+
+    .dark .sun {
+      display: none;
+    }
+    .dark .moon {
+      display: block;
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 0 1.5rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-mobile a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-mobile a:hover {
+      color: var(--accent);
+    }
+
+    .nav-mobile.active {
+      display: flex;
+    }
+    .submenu-container {
+      position: relative;
+    }
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      min-width: 160px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      z-index: 100;
+      flex-direction: column;
+      gap: 0;
+    }
+    .submenu a {
+      padding: 0.75rem 1rem;
+      display: block;
+      color: var(--text-color);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .submenu a:hover {
+      background: var(--accent-bg);
+      color: var(--accent);
+    }
+    .submenu-container:hover .submenu,
+    .submenu-container:focus-within .submenu {
+      display: flex;
+    }
+    .mobile-submenu {
+      display: none;
+      flex-direction: column;
+      padding-left: 1rem;
+    }
+    .mobile-submenu.active {
+      display: flex;
+    }
+    .mobile-has-submenu {
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-desktop {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+      .submenu-container {
+        width: 100%;
+      }
+      .submenu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        min-width: 0;
+        background: none;
+        padding-left: 1rem;
+      }
+    }
+  </style>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      const logo = document.getElementById("siteLogo");
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+
+      const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
+
+      document.documentElement.classList.toggle("dark", isDark);
+
+      if (logo) {
+        logo.src = isDark ? "/src/Icons/logo-dark.png" : "/src/Icons/logo.png";
+      }
+
+      const themeToggle = document.getElementById("themeToggle");
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const isDarkNow = document.documentElement.classList.toggle("dark");
+
+          if (logo) {
+            logo.src = isDarkNow
+              ? "/src/Icons/logo-dark.png"
+              : "/src/Icons/logo.png";
+          }
+
+          localStorage.setItem("theme", isDarkNow ? "dark" : "light");
+          window.dispatchEvent(new Event("themechange"));
+        });
+      }
+
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("active");
+        });
+      }
+
+      const mobileHasSubmenu = document.querySelector(".mobile-has-submenu");
+      const mobileSubmenu = document.querySelector(".mobile-submenu");
+      if (mobileHasSubmenu && mobileSubmenu) {
+        mobileHasSubmenu.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileSubmenu.classList.toggle("active");
+        });
+      }
+    });
+  </script>
+</header>
