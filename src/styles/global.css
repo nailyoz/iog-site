@@ -2,17 +2,11 @@
 
 :root {
   --text-color: #0e0e11;
-  --bg-color: rgba(255, 255, 255, 0.8);
+  --bg-color: rgba(255, 255, 255, 0.897);
   --border-color: #e4e4e7;
-  --accent: #0d50b4;
+  --accent: #006dbf;
 }
 
-:root.dark {
-  --text-color: #d4d4d8;
-  --bg-color: rgba(14, 14, 17, 0.8);
-  --border-color: #27272a;
-  --accent: #0ea0e3;
-}
 * {
   margin: 0;
   padding: 0;

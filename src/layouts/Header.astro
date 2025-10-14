@@ -5,7 +5,7 @@ import { Icon } from "astro-icon/components";
 <header role="banner" aria-label="Main navigation" class="site-header">
   <div class="header-inner">
     <a href="/#hero" aria-label="Go to home" class="logo-link">
-      <img src="" class="logo-icon" id="siteLogo" />
+      <img src="/src/Icons/logo.png" class="logo-icon" id="siteLogo" />
     </a>
 
     <nav class="nav-desktop">
@@ -220,36 +220,6 @@ import { Icon } from "astro-icon/components";
   </style>
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      const logo = document.getElementById("siteLogo");
-      const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-
-      const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
-
-      document.documentElement.classList.toggle("dark", isDark);
-
-      if (logo) {
-        logo.src = isDark ? "/src/Icons/logo-dark.png" : "/src/Icons/logo.png";
-      }
-
-      const themeToggle = document.getElementById("themeToggle");
-      if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-          const isDarkNow = document.documentElement.classList.toggle("dark");
-
-          if (logo) {
-            logo.src = isDarkNow
-              ? "/src/Icons/logo-dark.png"
-              : "/src/Icons/logo.png";
-          }
-
-          localStorage.setItem("theme", isDarkNow ? "dark" : "light");
-          window.dispatchEvent(new Event("themechange"));
-        });
-      }
-
       const mobileMenuToggle = document.getElementById("mobileMenuToggle");
       const mobileMenu = document.getElementById("mobileMenu");
       if (mobileMenuToggle && mobileMenu) {
