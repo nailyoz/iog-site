@@ -3,4 +3,4 @@
 #
 !.gitignore
 !dist/
-!dist/**/*/
+!dist/**/*
