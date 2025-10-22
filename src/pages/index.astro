@@ -8,29 +8,22 @@ import ContactUs from "../components/ContactUs.astro";
   <div class="layout">
     <main>
       <section id="hero">
-        <div class="container-grid card">
-          <img
-            src="/assets/images/home.jpg"
-            alt="illustration"
-            class="illustration"
-          />
-          <div class="content-center">
-            <img src="/assets/images/logo.png" alt="logo" class="logo" />
-            <span> A próxima revolução digital já começou!</span>
-            <p>
-              Unimos energia, mobilidade, dados e infraestrutura em uma rede
-              inteligente, descentralizada e escalável. Bem-vindo à era da
-              Internet of Grids.
-            </p>
+        <div class="card">
+          <img src="/assets/images/logo.png" alt="logo" class="logo" />
+          <h2>A próxima revolução digital já começou!</h2>
+          <p>
+            Unimos energia, mobilidade, dados e infraestrutura em uma rede
+            inteligente, descentralizada e escalável. Bem-vindo à era da
+            Internet of Grids.
+          </p>
 
-            <button onclick="location.href='/#products'">
-              Explore Nossas Soluções</button
-            >
-          </div>
+          <button onclick="location.href='/#products'">
+            Explore Nossas Soluções</button
+          >
         </div>
       </section>
     </main>
-    <section id="intersection">
+    <section id="intersection" class="center-everything">
       <div class="card content-center">
         <h2>Descubra o Futuro</h2>
         <p>
@@ -69,7 +62,7 @@ import ContactUs from "../components/ContactUs.astro";
           Explore nossas soluções que conectam e otimizam infraestruturas
           urbanas e industriais.
         </p>
-        <div class="products-links container-grid">
+        <div class="products-list">
           <ProductCard
             title="Open MDX"
             description="A Plataforma para Redes Elétricas Inteligentes "
@@ -93,40 +86,85 @@ import ContactUs from "../components/ContactUs.astro";
 </Layout>
 
 <style>
+  .layout {
+    background-image: url("/assets/images/home.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+  }
   main {
-    height: 100%;
-    display: flex;
-    justify-content: center;
+    background: #000000;
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 51%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 
   #hero {
-    display: flex;
-    align-items: start;
-    flex-direction: column;
-    justify-content: center;
+    height: 70vh;
   }
 
-  .content {
+  section {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-left: 1rem;
+    justify-content: center;
+    align-items: center;
   }
-  .logo {
-    width: 25rem;
-    height: auto;
+
+  .img-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px) brightness(0.75);
+  }
+
+  .card .logo {
+    height: 5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .products-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .moving-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
     margin-bottom: 1rem;
   }
-  @media screen and (max-width: 768px) {
-    #all {
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-    }
 
-    .container {
-      display: flex;
-      flex-direction: column;
+  .moving-products {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: scroll-left 15s linear infinite;
+  }
+
+  .moving-products .items {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
     }
   }
 </style>
