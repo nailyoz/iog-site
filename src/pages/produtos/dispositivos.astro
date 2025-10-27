@@ -8,70 +8,65 @@ const images = [Medidores.src, MedidoresInfo.src];
 ---
 
 <Layout page="Open MDX">
-  <section class="mdx layout">
-    <div class="card">
-      <h2>Dispositivos e Sensores Inteligentes de Telemetria</h2>
-      <span class="subtitle"
-        >Monitoramento Inteligente de Energia em Tempo Real</span
-      >
+  <div class="layout">
+    <section class="center-everything">
+      <div class="card">
+        <h2>Dispositivos e Sensores Inteligentes de Telemetria</h2>
+        <span class="subtitle"
+          >Monitoramento Inteligente de Energia em Tempo Real</span
+        >
 
-      <div>
-        <p>
-          Nossas NICs (Network Interface Cards) são módulos de comunicação
-          inteligentes projetados para transformar medidores de energia em
-          dispositivos conectados e monitoráveis remotamente. Compactos,
-          robustos e com alta precisão, eles são a base da nossa solução de
-          monitoramento. Com suporte a tecnologias NB-IoT e LoRaWAN, garantem
-          conectividade estável mesmo em ambientes remotos ou de difícil acesso.
-        </p>
+        <div>
+          <p>
+            Nossas NICs (Network Interface Cards) são módulos de comunicação
+            inteligentes projetados para transformar medidores de energia em
+            dispositivos conectados e monitoráveis remotamente. Compactos,
+            robustos e com alta precisão, eles são a base da nossa solução de
+            monitoramento. Com suporte a tecnologias NB-IoT e LoRaWAN, garantem
+            conectividade estável mesmo em ambientes remotos ou de difícil
+            acesso.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="card container-grid">
-      <div class="layout">
-        <h2>Características dos Dispositivos:</h2>
-        <p>
-          Baixo consumo de dados: Possui mecanismo de compressão e recuperação
-          de dados.
-        </p>
-        <p>
-          Transmissão automática de dados via push dos principais parâmetros
-        </p>
-        <p>
-          Interface local via BLE: controle via aplicativo para contingência com
-          todas as funçõesremotas no aplicativo
-        </p>
-        <p>
-          Protocolos NB-IoT e LoRaWAN para conectividade eficiente e de baixo
-          consumo
-        </p>
-        <p>Alimentação independente ou via rede elétrica, conforme o modelo</p>
-        <p>Atualizações remotas (FUOTA) da NIC e medidore</p>
+    </section>
+    <section class="center-everything">
+      <div class="card">
+        <h2>Características dos Dispositivos</h2>
+
+        <div class="content">
+          <div>
+            <p>
+              Baixo consumo de dados: Possui mecanismo de compressão e
+              recuperação de dados.
+            </p>
+            <p>
+              Transmissão automática de dados via push dos principais parâmetros
+            </p>
+            <p>
+              Interface local via BLE: controle via aplicativo para contingência
+              com todas as funçõesremotas no aplicativo
+            </p>
+            <p>
+              Protocolos NB-IoT e LoRaWAN para conectividade eficiente e de
+              baixo consumo
+            </p>
+            <p>
+              Alimentação independente ou via rede elétrica, conforme o modelo
+            </p>
+            <p>Atualizações remotas (FUOTA) da NIC e medidore</p>
+          </div>
+
+          <img
+            src="/assets/device-illustration2.svg"
+            alt="illustration"
+            class="illustration"
+          />
+        </div>
       </div>
-      <img
-        src="/assets/device-illustration2.svg"
-        alt="illustration"
-        class="illustration"
-      />
-    </div>
-    <!-- <div class="card container-grid">
-      <img
-        src="/assets/device-illustration.svg"
-        alt="illustration"
-        class="illustration"
-      />
-      <div class="layout">
-        <h2>Sensores Integrados</h2>
-        <p>
-          Sensor de corrente e tensão para monitoramento detalhado da rede
-          elétrica
-        </p>
-        <p>
-          Sensor de temperatura interna para proteção térmica do dispositivo
-        </p>
-        <p>Indicadores de sinal e status de conexão para diagnóstico rápido</p>
-        <p>Detecção de falhas, quedas e reconexões automaticamente</p>
-      </div>
-    </div> -->
-    <ContactUs />
-  </section>
+    </section>
+
+    <section class="center-everything">
+      <ContactUs />
+    </section>
+  </div>
 </Layout>
