@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.13.2"><title>NEPEN Solutions - Open MDX</title><link rel="stylesheet" href="/_astro/index.tVSaMpQJ.css">
+<style>.container[data-astro-cid-eirsdxmr]{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}.image-container[data-astro-cid-eirsdxmr]{position:relative;margin:2rem auto;width:100%;max-width:20rem;aspect-ratio:1 / 1}.main-image[data-astro-cid-eirsdxmr],.background-image[data-astro-cid-eirsdxmr]{width:100%;height:100%;border-radius:8px;object-fit:cover;transition:transform .4s ease,opacity .3s ease;box-shadow:0 5px 15px #0003}.background-image[data-astro-cid-eirsdxmr]{position:absolute;top:5%;left:5%;z-index:-1;opacity:.9}.main-image[data-astro-cid-eirsdxmr]:hover{transform:translateY(-5px)}.fullscreen-overlay[data-astro-cid-eirsdxmr]{display:flex;align-items:center;justify-content:center;position:fixed;z-index:9999;inset:0;background:#000000e6;flex-direction:row;padding:1rem}.fullscreen-image[data-astro-cid-eirsdxmr]{width:90%;height:auto;max-height:90vh;border-radius:.5rem;object-fit:contain}.close-btn[data-astro-cid-eirsdxmr]{position:absolute;top:1rem;right:1rem;font-size:2rem;color:#fff;cursor:pointer;z-index:10001}.fs-btn[data-astro-cid-eirsdxmr]{font-size:2rem;color:#fff;background:none;border:none;cursor:pointer;z-index:10001;user-select:none}@media (max-width: 768px){.container[data-astro-cid-eirsdxmr]{flex-direction:column;gap:.5rem}.image-container[data-astro-cid-eirsdxmr]{max-width:90%;aspect-ratio:1 / 1}button[data-astro-cid-eirsdxmr]{font-size:1.25rem}.fullscreen-overlay[data-astro-cid-eirsdxmr]{flex-direction:column;justify-content:center;padding:.5rem}.fullscreen-image[data-astro-cid-eirsdxmr]{width:95%;max-height:70vh}.fs-btn[data-astro-cid-eirsdxmr]{font-size:1.5rem;margin:.5rem}.close-btn[data-astro-cid-eirsdxmr]{font-size:2rem}}@media (max-width: 480px){.background-image[data-astro-cid-eirsdxmr]{top:10px;left:10px}.main-image[data-astro-cid-eirsdxmr]:hover{transform:none}}
+</style></head> <body data-astro-cid-sckkx6r4> <div id="container" data-astro-cid-sckkx6r4> <header role="banner" aria-label="Main navigation" class="site-header" data-astro-cid-xbstl6g3> <div class="header-inner" data-astro-cid-xbstl6g3> <a href="/#hero" aria-label="Go to home" class="logo-link" data-astro-cid-xbstl6g3> <img src="/assets/images/logo.png" class="logo-icon" id="siteLogo" data-astro-cid-xbstl6g3> </a> <nav class="nav-desktop" data-astro-cid-xbstl6g3> <div class="submenu-container" data-astro-cid-xbstl6g3> <a href="/#products" class="has-submenu" aria-haspopup="true" aria-expanded="false" data-astro-cid-xbstl6g3>Produtos</a> <div class="submenu" role="menu" aria-label="Produtos submenu" data-astro-cid-xbstl6g3> <a href="/produtos/dispositivos" role="menuitem" data-astro-cid-xbstl6g3>Dispositivos</a> <a href="/produtos/open-mdx" role="menuitem" data-astro-cid-xbstl6g3>OpenMDX</a> </div> </div> <a href="/#contact-us" data-astro-cid-xbstl6g3>Contato</a> <a href="/sobre-nos" data-astro-cid-xbstl6g3>Sobre Nós</a> </nav> <div class="header-controls" data-astro-cid-xbstl6g3> <!-- <button id="themeToggle" aria-label="Toggle theme" class="theme-toggle">
+        <Icon name="tabler:sun" class="sun icon" />
+        <Icon name="tabler:moon" class="moon icon" />
+      </button> --> <button id="mobileMenuToggle" aria-label="Toggle mobile menu" class="mobile-menu-toggle" data-astro-cid-xbstl6g3> <svg width="1em" height="1em" class="icon" data-astro-cid-xbstl6g3="true" data-icon="tabler:menu">   <symbol id="ai:tabler:menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"/></symbol><use href="#ai:tabler:menu"></use>  </svg> </button> </div> </div> <nav id="mobileMenu" class="nav-mobile" data-astro-cid-xbstl6g3> <div class="mobile-submenu-container" data-astro-cid-xbstl6g3> <a href="#" class="mobile-has-submenu" data-astro-cid-xbstl6g3>Produtos</a> <div class="mobile-submenu" data-astro-cid-xbstl6g3> <a href="/produtos/dispositivos" data-astro-cid-xbstl6g3>Dispositivos</a> <a href="/produtos/open-mdx" data-astro-cid-xbstl6g3>OpenMDX</a> </div> </div> <a href="/#contact-us" data-astro-cid-xbstl6g3>Contato</a> <a href="/sobre-nos" data-astro-cid-xbstl6g3>Sobre Nós</a> </nav>  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("active");
+        });
+      }
+
+      const mobileHasSubmenu = document.querySelector(".mobile-has-submenu");
+      const mobileSubmenu = document.querySelector(".mobile-submenu");
+      if (mobileHasSubmenu && mobileSubmenu) {
+        mobileHasSubmenu.addEventListener("click", (e) => {
+          e.preventDefault();
+          mobileSubmenu.classList.toggle("active");
+        });
+      }
+    });
+  </script> </header>  <div class="layout"> <section class="center-everything"> <div class="card"> <h2>Open MDX</h2> <span class="subtitle">
+A Plataforma para Redes Elétricas Inteligentes
+</span> <div> <p>
+O Open MDX é uma plataforma modular e escalável desenvolvida pela
+            NEPEN Soluções para conectar, monitorar e automatizar redes
+            elétricas de forma integrada.
+</p> <p>
+Ela centraliza dados de medidores, sensores e atuadores em uma
+            arquitetura multiprotocolo, interoperável e segura, preparada para a
+            transformação digital do setor elétrico brasileiro.
+</p> <p>
+Com mais de uma década de evolução tecnológica, o Open MDX combina
+            experiência de campo, inteligência artificial e integração
+            corporativa, permitindo que distribuidoras e empresas de energia
+            gerenciem milhares de dispositivos em tempo real, com alta
+            confiabilidade e performance.
+</p> <div class="container" id="imgSlider" data-images="[&#34;/_astro/medidores.MTcVs3hB.png&#34;,&#34;/_astro/medidor-Info.COr9TJw1.png&#34;]" data-astro-cid-eirsdxmr> <button id="prevBtn" data-astro-cid-eirsdxmr>⬅</button> <div class="image-container" data-astro-cid-eirsdxmr> <img src="/_astro/medidores.MTcVs3hB.png" alt="Main image" class="main-image" id="mainImage" data-astro-cid-eirsdxmr> <img src="/_astro/medidor-Info.COr9TJw1.png" alt="Background image" class="background-image" id="bgImage" data-astro-cid-eirsdxmr> </div> <button id="nextBtn" data-astro-cid-eirsdxmr>➡</button> </div> <div id="fullscreenOverlay" class="fullscreen-overlay" style="display:none;" data-astro-cid-eirsdxmr> <span id="closeOverlay" class="close-btn" data-astro-cid-eirsdxmr>&times;</span> <button id="fsPrevBtn" class="fs-btn" data-astro-cid-eirsdxmr>⬅</button> <img id="fsImage" class="fullscreen-image" src="" alt="Fullscreen image" data-astro-cid-eirsdxmr> <button id="fsNextBtn" class="fs-btn" data-astro-cid-eirsdxmr>➡</button> </div>  <script type="module">
+  window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("imgSlider");
+    const images = JSON.parse(container.dataset.images || "[]");
+    let index = 0;
+
+    const mainImage = document.getElementById("mainImage");
+    const bgImage = document.getElementById("bgImage");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function updateImages() {
+      mainImage.src = images[index];
+      mainImage.alt = `Image ${index + 1}`;
+      bgImage.src = images[(index + 1) % images.length] ?? images[0] ?? "";
+      bgImage.alt = `Background image ${((index + 1) % images.length) + 1}`;
+    }
+
+    prevBtn?.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateImages();
+    });
+
+    nextBtn?.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateImages();
+    });
+
+    updateImages();
+
+    //modal
+    const overlay = document.getElementById("fullscreenOverlay");
+    const fsImage = document.getElementById("fsImage");
+    const closeOverlay = document.getElementById("closeOverlay");
+    const fsPrevBtn = document.getElementById("fsPrevBtn");
+    const fsNextBtn = document.getElementById("fsNextBtn");
+
+    function openFullscreen(idx) {
+      fsImage.src = images[idx];
+      fsImage.alt = `Fullscreen image ${idx + 1}`;
+      overlay.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function closeFullscreen() {
+      overlay.style.display = "none";
+      document.body.style.overflow = "";
+    }
+    function updateFsImage(idx) {
+      fsImage.src = images[idx];
+      fsImage.alt = `Fullscreen image ${idx + 1}`;
+    }
+
+    mainImage.addEventListener("click", () => {
+      openFullscreen(index);
+    });
+
+    closeOverlay.addEventListener("click", closeFullscreen);
+
+    fsPrevBtn.addEventListener("click", () => {
+      index = (index - 1 + images.length) % images.length;
+      updateFsImage(index);
+    });
+
+    fsNextBtn.addEventListener("click", () => {
+      index = (index + 1) % images.length;
+      updateFsImage(index);
+    });
+
+    // Optional: close overlay on ESC key
+    document.addEventListener("keydown", (e) => {
+      if (overlay.style.display === "flex") {
+        if (e.key === "Escape") closeFullscreen();
+        if (e.key === "ArrowLeft") fsPrevBtn.click();
+        if (e.key === "ArrowRight") fsNextBtn.click();
+      }
+    });
+  });
+</script> </div> </div> </section> <section class="center-everything"> <div class="card"> <h2>Principais funcionalidades</h2> <div class="content"> <div> <p>Plataforma que possui funções MDC e MDM</p> <p>
+Visualização de dados em tempo real por meio de dashboards
+              interativos.
+</p> <p>
+Suporte aos principais padrões de conectividade: NB-IoT e LoRaWAN.
+</p> <p>Alertas automáticos de falhas, perdas e consumo anômalo.</p> <p>Histórico detalhado e exportação de relatórios.</p> <p>Integração com sistemas externos via API.</p> </div> <img src="/assets/data-illustration.svg" alt="illustration" class="illustration"> </div> </div> </section> <section class="center-everything"> <div class="card"> <h2>Por que escolher nosso sistema?</h2> <div class="content"> <img src="/assets/data-illustration2.svg" alt="illustration" class="illustration"> <div> <p>Redução de custos operacionais com monitoramento remoto.</p> <p>
+Gestão centralizada de milhares de medidores em um único painel.
+</p> <p>Melhoria na eficiência energética e gestão de recursos.</p> <p>Detecção precoce de falhas e anomalias.</p> <p>Decisões informadas com base em dados precisos e atualizados.</p> <p>
+Plataforma escalável e personalizável conforme suas necessidades.
+</p> </div> </div> </div> </section> <section class="center-everything content divided-section"> <div class="card"> <h2>Principais Características</h2> <p></p><h3>Arquitetura modular e multiprotocolo:</h3> suporta Wi-SUN, NB-IoT,
+          LoRaWAN, GPRS, DNP3 e APIs REST.
+ <p></p><h3>Integração corporativa completa:</h3> compatível com sistemas comerciais,
+          SCADA, SAP e Data Lake.
+ <p></p><h3>Operação híbrida:</h3> disponível em nuvem (on-cloud) ou local (on-premise).
+ <p></p><h3>Visualização avançada:</h3> dashboards interativos e relatórios em
+          tempo real.
+ <p></p><h3>Segurança e conformidade:</h3> aderência às normas e regulamentações
+          do setor elétrico.
+ <p></p><h3>IA e automação:</h3> análise de dados e execução de rotinas inteligentes
+          de controle.
+ <p></p><h3>Especificações abertas:</h3> disponibilização de protocolos para integração
+          de NICs e outros sistemas, sem burocracia.
+ </div> <div class="card"> <h2>Componentes da Plataforma Open MDX</h2> <h3>MDX Meter</h3> <p>
+Sistema de gestão de medição, leitura e faturamento, com integração à
+          CCEE e sistemas comerciais. Inclui módulos de perdas, qualidade,
+          geração distribuída, balanço energético, tarifas e análise de memória
+          de massa, além de aplicativo mobile para consumidores acompanharem o
+          consumo em tempo real. No Brasil, já possui integração com os
+          principais sistemas comerciais.
+</p> <h3>MDX Sensors & Automation</h3> <p>
+Solução completa para integração de sensores e atuadores em redes
+          elétricas inteligentes. Oferece visibilidade total e controle remoto
+          de dispositivos de campo, com comunicação padronizada via DNP3 e
+          integração nativa ao SCADA. Suporta dispositivos como SmartFuse,
+          Rocket-1 e outros equipamentos IoT para detecção de falhas e
+          automação.
+</p> </div> </section> <section class="center-everything"> <div class="card"> <h2>Benefícios</h2> <ul> <p>Redução de custos operacionais com automação de processos.</p> <p>Melhoria dos indicadores DEC/FEC e da qualidade do serviço.</p> <p> <strong>Aplicativo consumidor:</strong> empoderamento ao consumidor da
+            distribuidora na palma da mão, com dados do MDX.
+</p> <p> <strong>Dados:</strong> integração com Data Lake para relatórios personalizados.
+</p> <p>Uso de tecnologias modernas e escaláveis.</p> <p>Conectividade total com diferentes tecnologias e fabricantes.</p> <p>Maior confiabilidade, segurança e inteligência operacional.</p> <p>
+Preparação para o futuro do setor elétrico, smart grid, mercado
+            livre e integração CCEE.
+</p> </ul> </div> </section> <section> <main data-astro-cid-ypgb7zfc> <section id="contact-us" class="card" data-astro-cid-ypgb7zfc> <div class="container-grid" data-astro-cid-ypgb7zfc> <div style="text-align: start;" data-astro-cid-ypgb7zfc> <h2 data-astro-cid-ypgb7zfc>Fale Conosco</h2> <p data-astro-cid-ypgb7zfc>Estamos aqui para ajudar!</p> <p data-astro-cid-ypgb7zfc>
+Entre em contato conosco para saber mais sobre a Internet of Grids
+          (IoG) e como podemos colaborar para transformar seu negócio.
+</p> </div> <form action="https://formsubmit.co/contato@internetofgrids.com.br" method="POST" data-astro-cid-ypgb7zfc> <input type="text" name="name" placeholder="Seu Nome" required data-astro-cid-ypgb7zfc> <input type="email" name="email" placeholder="Seu Email" required data-astro-cid-ypgb7zfc> <input type="text" name="_subject" placeholder="Assunto" required data-astro-cid-ypgb7zfc> <textarea name="message" placeholder="Sua Mensagem" required data-astro-cid-ypgb7zfc></textarea> <div style="justify-content: end; display: flex;" data-astro-cid-ypgb7zfc> <button type="submit" data-astro-cid-ypgb7zfc>Contate-Nos</button> </div> </form> </div>  </section> </main> </section> </div>   <footer aria-label="footer" class="footer" data-astro-cid-mtxgg6pp> <div class="footer-inner" data-astro-cid-mtxgg6pp> <nav class="footer-section" data-astro-cid-mtxgg6pp> <span data-astro-cid-mtxgg6pp>Páginas</span> <a href="/#products" data-astro-cid-mtxgg6pp>Produtos</a> <a href="/#contact-us" data-astro-cid-mtxgg6pp>Contato</a> <a href="/sobre-nos" data-astro-cid-mtxgg6pp>Sobre Nós</a> </nav> <div class="footer-section" data-astro-cid-mtxgg6pp> <span data-astro-cid-mtxgg6pp>Redes</span> <a href="/#products" class="list-item" data-astro-cid-mtxgg6pp> <svg width="32" height="32" color="var(--accent)" data-astro-cid-mtxgg6pp="true" data-icon="tabler:brand-linkedin">   <symbol id="ai:tabler:brand-linkedin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M8 11v5m0-8v.01M12 16v-5m4 5v-3a2 2 0 1 0-4 0"/><path d="M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/></g></symbol><use href="#ai:tabler:brand-linkedin"></use>  </svg>
+LinkedIn</a> <a href="/#contact-us" class="list-item" data-astro-cid-mtxgg6pp><svg width="32" height="32" color="var(--accent)" data-astro-cid-mtxgg6pp="true" data-icon="tabler:brand-instagram">   <symbol id="ai:tabler:brand-instagram" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0-6 0m7.5-4.5v.01"/></g></symbol><use href="#ai:tabler:brand-instagram"></use>  </svg>Instagram</a> </div> </div>  </footer> </div> </body></html>
